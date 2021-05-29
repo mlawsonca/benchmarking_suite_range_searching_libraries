@@ -7,11 +7,11 @@ This project contains all of the code needed to replicate the experiments for th
 The correctness tests have one core dependency: Boost (random)
 The performance and scalability benchmark has 3 core dependencies: SEACASExo_format (required to read the mesh files), MPI (used for parallelization), and Boost (serialization, used for sharing timing results between MPI processes). The memory tests will also require Valgrind (we use the Massif heap profiler)
 
-Additionally, if you actually wish to test any of the libraries, these will need to be installed separately. A complete list of the libraries and/or their code respositories can be found in the paper.
+Additionally, if you actually wish to test any of the spatial indexing libraries, these will need to be installed separately. A complete list of the libraries and/or their code respositories can be found in the paper.
 
 ### Getting Started
 The basic build instructions for this project are:
-cd range_trees_benchmarking && mkdir build && cd build && cmake ..
+cd range_trees_benchmarking && mkdir build && cd build && cmake .. && make -j
 
 Note: the spatial indexing libraries must be installed separately, and several of these libraries may have minor build issues. In addition, the there are a number of CMake variables users will have to set for some of the libraries such as the install directory of the library (e.g., ANN_DIR). CMake will tell you, using errors, if one or more of these variables are not set. For these reasons, we would highly recommend using the Docker image for this project, which comes packaged with all of these dependencies already built (without error) and which builds all of the code needed for this project (linking in all of the 20 librarie). It can be found at https://hub.docker.com/repository/docker/mlawsonca/benchmarking_suite_range_searching_libraries
 
@@ -23,26 +23,26 @@ By default we build both the benchmarking code, and the correctness tests. Eithe
 -DBUILD_BENCHMARK=false
 
 By default, testing and/or benchmarking is enabled for all of the libraries (apart from PCL, which we needed to use GCC 8.3.1 to build, rather than GCC 10.2.0 as was used for the rest of the project). Can disable any of the libraries using the following:
--DTEST_3DTK=false
--DTEST_ALGLIB=false
--DTEST_ANN=false
--DTEST_BOOST_RTREE=false
--DTEST_CGAL=false
--DTEST_FLANN=false
--DTEST_KDTREE=false
--DTEST_KDTREE2=false
--DTEST_KDTREE3=false
--DTEST_KDTREE4=false
--DTEST_LIBKDTREE=false
--DTEST_LIBKDTREE2=false
--DTEST_LIBNABO=false
--DTEST_LIBSPATIALINDEX=false
--DTEST_NANOFLANN=false
--DTEST_OCTREE=false
--DTEST_PCL=false
--DTEST_PICO_TREE=false
--DTEST_RTREE_TEMPLATE=false
--DTEST_SPATIAL=false
+- -DTEST_3DTK=false
+- -DTEST_ALGLIB=false
+- -DTEST_ANN=false
+- -DTEST_BOOST_RTREE=false
+- -DTEST_CGAL=false
+- -DTEST_FLANN=false
+- -DTEST_KDTREE=false
+- -DTEST_KDTREE2=false
+- -DTEST_KDTREE3=false
+- -DTEST_KDTREE4=false
+- -DTEST_LIBKDTREE=false
+- -DTEST_LIBKDTREE2=false
+- -DTEST_LIBNABO=false
+- -DTEST_LIBSPATIALINDEX=false
+- -DTEST_NANOFLANN=false
+- -DTEST_OCTREE=false
+- -DTEST_PCL=false
+- -DTEST_PICO_TREE=false
+- -DTEST_RTREE_TEMPLATE=false
+- -DTEST_SPATIAL=false
 
 
 #### Usage
