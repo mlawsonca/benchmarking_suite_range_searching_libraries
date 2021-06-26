@@ -1,6 +1,6 @@
 # Benchmarking Suite for Range Tree Libraries
 
-This project contains all of the code needed to replicate the experiments for the SC'21 paper: "Exploring Spatial Indexing for Accelerated Feature Retrieval in HPC." The code compares 20 different C/C++ spatial indexing libraries, and includes 1). correctness tests for the libraries and 2). the set of benchmarks used in the paper. These benchmarks include performance, strong and weak scaling, and memory usage tests.
+This project contains all of the code needed to replicate the experiments for the arXiv paper: "Exploring Spatial Indexing for Accelerated Feature Retrieval in HPC." The code compares 20 different C/C++ spatial indexing libraries, and includes 1). correctness tests for the libraries and 2). the set of benchmarks used in the paper. These benchmarks include performance, strong and weak scaling, and memory usage tests.
 
 ## Prerequisities
 
